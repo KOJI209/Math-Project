@@ -37,6 +37,13 @@ int main()
 	int choice;
 	int flip_coin();
 
+	cout << R"(  _______ _        _______             _______            
+ |__   __(_)      |__   __|           |__   __|           
+	| |   _  ___     | | __ _  ___       | | ___   ___    
+	| |  | |/ __|    | |/ _` |/ __|      | |/ _ \ / _ \   
+	| |  | | (__     | | (_| | (__       | | (_) |  __/   
+	|_|  |_|\___|    |_|\__,_|\___|      |_|\___/ \___|)";
+	cout << "\n========================================================\n";
 	cout << "Hello! Welcome to Tic Tac Toe!\n"; // main menu
 	cout << "\n--- Main Menu --- \n";
 	cout << "\n1. Play Tic Tac Toe\n";
@@ -54,14 +61,32 @@ int main()
 
 
 	switch (choice) {
-	case 0:
-		cout << "\nGoodbye!\n";
-		exit(0); // program ends
-	case 1:
-		srand((unsigned int)time(NULL)); // coin flip that decides who starts first
-		if (flip_coin() == CPU) cout << "\nThe CPU will start first." << "\n";
-		else cout << "\nThe Player will start first." << "\n";
-		break;
+		case 0:
+			cout << "\nGoodbye!\n";
+			exit(0); // program ends
+		case 1:
+			srand((unsigned int)time(NULL)); // coin flip that decides who starts first
+			if (flip_coin() == CPU) cout << R"(	____
+     .-'    '-.
+   .'   .-.    '.
+  /    /   \     \
+  |    \   `>    |
+  | "" / `._)    |
+  \   /   \ 2000 /
+   './     \   .'
+     '-.____;-'
+)" << "Heads." << "\nThe CPU will start first." << "\n";
+			else cout << R"(	____
+     .-'~~~~'-.
+   .' ________ '.
+  / .::::::::::. \
+  |  ||||||||||  |
+  |_.'========'._|
+  \O`""""""""""`T/
+   '.N        N.'
+     '-E__C_E-'
+)" << "\n" << "Tails." << "\nThe Player will start first." << "\n";
+			break;
 
 	}
 
